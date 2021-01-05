@@ -1,0 +1,24 @@
+%div{ "data-controller": 'dropdown'}
+  %header{class: "w-screen bg-gray-300"}
+    .container.m-auto
+      %nav.flex.items-center.h-12.justify-between
+        %h1.text-xl.font-semibold OneHR
+
+        %ul.right.flex.relative{"data-dropdown-target": 'area'}
+          - if !user_signed_in?
+            = link_to "Sign In", new_user_session_path
+          - else
+            %li.remove{"data-action": "click->dropdown#toggle"}
+              = current_user.user_name
+            
+            %div.remove.hidden.absolute.z-1.w-full{'data-dropdown-target': 'links'}
+              %ul.border-2.b-grey-400.space-y-3
+                %li
+                  Profile
+                %li
+                  Settings
+                %li
+                  = link_to 'Log Out', destroy_user_session_path, method: 'delete'
+
+
+  
