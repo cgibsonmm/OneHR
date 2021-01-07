@@ -1,0 +1,7 @@
+- cards = ['My Reqs', 'Candidates', 'Calendar', 'Reports']
+
+.h-full.bg-gray-200
+  .cardBox.flex.flex-wrap.items-start
+    - cards.each do |card|
+      = render partial: 'card', locals: {card: card}
+    

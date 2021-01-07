@@ -1,6 +1,6 @@
 %div{ "data-controller": 'dropdown'}
-  %header{class: "w-screen bg-gray-300"}
-    .container.m-auto
+  %header{class: "container-break bg-gray-300"}
+    %div.lg:container.mx-3.lg:mx-auto
       %nav.flex.items-center.h-12.justify-between
         %h1.text-xl.font-semibold 
           = link_to 'OneHR', root_path
@@ -14,7 +14,7 @@
 
             -# Drop Down Menu
             %div.remove.hidden.absolute.z-1.w-full{'data-dropdown-target': 'links'}
-              %ul.border-2.b-grey-400.space-y-3
+              %ul.border-2.bg-gray-300.space-y-3
                 %li
                   Profile
                 %li

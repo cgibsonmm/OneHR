@@ -13,3 +13,5 @@ import "stylesheets/application";
 
 Rails.start();
 ActiveStorage.start();
+
+document.addEventListener("turbo:load", () => console.log("hello"));
