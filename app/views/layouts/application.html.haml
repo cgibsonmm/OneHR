@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title OneHR
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stimulus_include_tags
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  
+  %body.bg-gray-100
+    .lg:container.m-auto.h-screen.flex.flex-col
+      = render partial: 'shared/navbar'
+      = render partial: 'shared/alerts'
+      = yield

@@ -1,3 +1,11 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
+const webpack = require("webpack");
 
-module.exports = environment
+environment.plugins.prepend(
+  "Provide",
+  new webpack.ProvidePlugin({
+    Rails: ["@rails/ujs"],
+  })
+);
+
+module.exports = environment;
