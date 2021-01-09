@@ -8,9 +8,11 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stimulus_include_tags
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    .container
+  
+  %body.bg-gray-100
+    .lg:container.m-auto.h-screen.flex.flex-col
       = render partial: 'shared/navbar'
       = render partial: 'shared/alerts'
       = yield
