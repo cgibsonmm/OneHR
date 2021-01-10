@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :clients
+    resources :users
+    resources :roles
+
+    root to: 'clients#index'
+  end
   get 'dashboard/index'
   devise_for :clients
   devise_for :users

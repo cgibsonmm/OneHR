@@ -60,3 +60,4 @@ gem "haml-rails", "~> 2.0"
 gem "cancancan", "~> 3.2"
 
 gem "rolify", "~> 5.3"
+gem "administrate"
