@@ -36,6 +36,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
 end
+group :test do
+  gem 'simplecov', require: false
+end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -57,3 +60,7 @@ gem "devise", "~> 4.7"
 gem 'hotwire-rails'
 gem 'font_awesome5_rails'
 gem "haml-rails", "~> 2.0"
+gem "cancancan", "~> 3.2"
+
+gem "rolify", "~> 5.3"
+gem "administrate"
