@@ -9,14 +9,16 @@
           - if !user_signed_in?
             = link_to "Sign In", new_user_session_path
           - else
-            %li.remove{"data-action": "click->dropdown#toggle"}
+            %button.remove{"data-action": "click->dropdown#toggle"}
               = current_user.user_name
 
             -# Drop Down Menu
-            %div.remove.hidden.absolute.z-1.w-full{'data-dropdown-target': 'links'}
+            %div#dropdown.remove.hidden.absolute.z-1.w-full{'data-dropdown-target': 'links'}
               %ul.border-2.bg-gray-300.space-y-3
                 %li
                   Profile
+                %li
+                  = link_to 'New Requsition', new_requisition_path
                 %li
                   Settings
                 %li
