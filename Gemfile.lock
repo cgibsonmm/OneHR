@@ -369,7 +369,7 @@ DEPENDENCIES
   rails (~> 6.1.0)
   redis (~> 4.0)
   rolify (~> 5.3)
-  rspec-rails
+  rspec-rails (~> 4.0.2)
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers
