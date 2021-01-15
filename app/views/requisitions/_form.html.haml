@@ -1,0 +1,7 @@
+= simple_form_for @requisition do |f|
+  = f.input :title
+  = f.input :department
+  = f.input :full_time
+  = f.input :preferred_start_date, id: "preferred_start_date"
+  = f.input :job_description
+  = f.submit

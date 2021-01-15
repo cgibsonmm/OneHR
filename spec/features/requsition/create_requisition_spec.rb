@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe 'Create Requisition', type: :feature, js: true do
+RSpec.describe 'Create Requisition', type: :feature do
+  puts Rails.env
   context 'logged in as hiring manager' do
     before do
-      @hiring_manager = create(:user, :hiring_manager)
+      @hiring_manager = create(:hiring_manager)
       sign_in @hiring_manager
     end
 
     it 'should create a new requisition' do
       visit '/'
       click_on @hiring_manager.user_name
-      save_and_open_page
       within '#dropdown' do
         click_on 'New Requsition'
       end
@@ -24,12 +24,24 @@ RSpec.describe 'Create Requisition', type: :feature, js: true do
 
       fill_in 'Title', with: @requisition[:title]
       fill_in 'Department', with: @requisition[:department]
-      fill_in 'Full Time', with: @requisition[:full_time]
-      fill_in 'Preferred Start Date', with: @requisition[:preferred_start_date]
-      fill_in 'Job Description', with: @requisition[:job_description]
+      check 'Full time'
+      page.find('.requisition_preferred_start_date').set(@requisition[:preferred_start_date])
+      fill_in 'Job description', with: @requisition[:job_description]
       click_on 'Create Requisition'
 
       expect(page).to have_content('Successfully, created requisition')
+      expect(page).to have_content(@requisition[:title])
+    end
+  end
+
+  context 'logged in as normal user' do
+    before do
+      @user = create(:user)
+      sign_in @user
+    end
+    it 'should not allow you to create a requisition' do
+      visit new_requisition_path
+      expect(page).to have_content('Not authorized to view this page')
     end
   end
 end
