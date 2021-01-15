@@ -1,19 +1,19 @@
-.devise_card
+.card
   %h2.text-xl.font-semibold Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render partial: "devise/shared/error_messages", resource: resource
 
     = f.label :email, class: 'devise_label'
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "devise_input"
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "input"
 
     = f.label :password, class: 'devise_label'
     - if @minimum_password_length
       %em.font-semibold.text-gray-400.text-xs
         (#{@minimum_password_length} characters minimum)
-    = f.password_field :password, autocomplete: "new-password", class: "devise_input"
+    = f.password_field :password, autocomplete: "new-password", class: "input"
 
     = f.label :password_confirmation, class: 'devise_label'
-    = f.password_field :password_confirmation, autocomplete: "new-password", class: "devise_input"
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
     .actions
       = f.submit "Sign up", class: "devise_button"
   = render "devise/shared/links"

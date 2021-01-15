@@ -1,7 +1,8 @@
+
 = simple_form_for @requisition do |f|
-  = f.input :title
-  = f.input :department
-  = f.input :full_time
-  = f.input :preferred_start_date, id: "preferred_start_date"
-  = f.input :job_description
-  = f.submit
+  = f.input :title, label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
+  = f.input :department, label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
+  = f.input :full_time, label_html: { class: 'form_label' }, input_html: { class: 'checked:bg-blue-600 checked:border-transparent' }
+  = f.input :preferred_start_date, id: "preferred_start_date", label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
+  = f.input :job_description, label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
+  = f.button :submit, class: 'button'

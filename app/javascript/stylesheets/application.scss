@@ -15,19 +15,19 @@
   width: auto;
 }
 
-.devise_card{
+.card{
   @apply mt-6 flex flex-col mx-3 md:mx-auto p-12 bg-white md:w-1/2 lg:w-5/12 rounded;
 }
 
-.devise_label{
+.form_label{
  @apply block mt-2 text-xs font-semibold text-gray-600 uppercase
 }
 
-.devise_input{
+.form_input{
   @apply block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner
 }
 
-.devise_button{
+.button{
   @apply w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none
 }
 

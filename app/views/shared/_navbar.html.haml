@@ -19,8 +19,9 @@
               %ul.border-2.bg-gray-300.space-y-3
                 -# %li
                 -#   Profile
-                %li
-                  = link_to 'New Requsition', new_requisition_path
+                - if policy(Requisition).new?
+                  %li
+                    = link_to 'New Requsition', new_requisition_path
                 -# %li
                 -#   Settings
                 %li
