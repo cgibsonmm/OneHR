@@ -9,4 +9,12 @@ class User < ApplicationRecord
   def user_name
     email.split('@')[0]
   end
+
+  def admin?
+    role == 'admin'
+  end
+
+  def hiring_manager?
+    role == 'hiring_manager'
+  end
 end
