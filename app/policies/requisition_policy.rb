@@ -1,6 +1,17 @@
 class RequisitionPolicy < ApplicationPolicy
-  def index?
-    true
+  class Scope
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve
+      return @user if @user.admin? || @user.hiring_manager?
+    end
+
+    private
+
+    attr_reader :user, :scope
   end
 
   def new?
@@ -8,18 +19,10 @@ class RequisitionPolicy < ApplicationPolicy
   end
 
   def create?
-    puts user.hiring_manager?
-    puts user.admin?
-    user.present? && (user.hiring_manager? || user.admin?)
+    user.hiring_manager? || user.admin?
   end
 
-  def show
-    true
-  end
-
-  private
-
-  def requisition
-    record
+  def show?
+    create?
   end
 end

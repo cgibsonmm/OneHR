@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Create Requisition', type: :feature do
-  puts Rails.env
   context 'logged in as hiring manager' do
     before do
       @hiring_manager = create(:hiring_manager)
@@ -12,7 +11,7 @@ RSpec.describe 'Create Requisition', type: :feature do
       visit '/'
       click_on @hiring_manager.user_name
       within '#dropdown' do
-        click_on 'New Requsition'
+        click_on 'New Requisition'
       end
 
       expect(page).to have_content('New Requisition')
@@ -41,7 +40,7 @@ RSpec.describe 'Create Requisition', type: :feature do
     end
     it 'should not allow you to create a requisition' do
       visit new_requisition_path
-      expect(page).to have_content('Not authorized to view this page')
+      expect(page).to have_content('You are not authorized to perform this action.')
     end
   end
 end
