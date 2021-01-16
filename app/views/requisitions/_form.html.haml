@@ -1,5 +1,4 @@
-
-= simple_form_for @requisition do |f|
+= simple_form_for @requisition, html: {"data-action": "date#click"} do |f|
   = f.input :title, label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
   = f.input :department, label_html: { class: 'form_label' }, input_html: { class: 'form_input' }
   = f.input :full_time, label_html: { class: 'form_label' }, input_html: { class: 'checked:bg-blue-600 checked:border-transparent' }

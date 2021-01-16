@@ -7,7 +7,7 @@ RSpec.describe 'Dashboard', type: :feature do
   end
   it 'shows the right context' do
     visit dashboard_index_path
-    count = page.all('.card').length
+    count = page.all('.dashboard-card').length
     expect(count).to be(4)
   end
 end
