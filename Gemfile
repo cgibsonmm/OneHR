@@ -28,16 +28,18 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 4.0.2'
   gem 'factory_bot_rails'
+end
+
+group :test do
+  gem 'database_cleaner-active_record'
   gem 'faker'
-  gem "shoulda-matchers", require: false
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'database_cleaner'
-end
-group :test do
+  gem "shoulda-matchers", require: false
   gem 'simplecov', require: false
+  gem 'launchy'
 end
 
 group :development do
@@ -60,7 +62,7 @@ gem "devise", "~> 4.7"
 gem 'hotwire-rails'
 gem 'font_awesome5_rails'
 gem "haml-rails", "~> 2.0"
-gem "cancancan", "~> 3.2"
 
-gem "rolify", "~> 5.3"
 gem "administrate"
+gem 'simple_form'
+gem 'pundit'

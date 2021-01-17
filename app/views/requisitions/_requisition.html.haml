@@ -1,0 +1,15 @@
+%tr.requisition-line{class: "requisition-#{requisition.id}"}
+  %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
+    .text-sm.leading-5.text-gray-900
+      = requisition[:title]
+    .text-sm.leading-5.text-gray-500
+      = requisition[:department]
+  %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
+    .text-sm.leading-5.text-gray-900
+      = requisition[:preferred_start_date]
+  %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
+    .text-sm.leading-5.text-gray-900
+      12
+  %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
+    .px-2.inline-flex.text-xs.leading-5.rounded-full.bg-green-100.text-green-800
+      Open
