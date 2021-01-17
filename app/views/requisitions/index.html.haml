@@ -1,0 +1,16 @@
+.requisition-index.mt-10
+  -# %ul.header.flex.w-full.h-20.justify-between.text-sm.text-center
+  %table.min-w-full.bg-white
+    %thead
+      %tr 
+        %th.px-6.py-3.border-b.border-gray-200.bg-gray-50.text-left.text-xs.leading-4.font-medium.text-gray-500.uppercase.tracking-wider
+          Title
+        %th.px-6.py-3.border-b.border-gray-200.bg-gray-50.text-left.text-xs.leading-4.font-medium.text-gray-500.uppercase.tracking-wider
+          Preferred Start Date
+        %th.px-6.py-3.border-b.border-gray-200.bg-gray-50.text-left.text-xs.leading-4.font-medium.text-gray-500.uppercase.tracking-wider
+          Applicants
+        %th.px-6.py-3.border-b.border-gray-200.bg-gray-50.text-left.text-xs.leading-4.font-medium.text-gray-500.uppercase.tracking-wider
+          Status
+        %th.px-6.py-3.border-b.border-gray-200.bg-gray-50
+    %tbody
+      = render @requisitions
