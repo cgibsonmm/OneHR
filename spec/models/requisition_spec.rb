@@ -11,20 +11,20 @@ RSpec.describe Requisition, type: :model do
     @requisition.title = nil
     expect(@requisition).not_to be_valid
   end
-  it 'should validate title is longer than 4 chars' do
-    @requisition.title = 'aaaa'
+  it 'should validate title is at least 4 chars' do
+    @requisition.title = 'aaa'
     expect(@requisition).not_to be_valid
-    @requisition.title = 'aaaaa'
+    @requisition.title = 'aaaa'
     expect(@requisition).to be_valid
   end
   it 'should validate department is present' do
     @requisition.department = ''
     expect(@requisition).not_to be_valid
   end
-  it 'should validate department is longer than 4 chars' do
-    @requisition.department = 'aaaa'
+  it 'should validate department is at least 4 chars' do
+    @requisition.department = 'aaa'
     expect(@requisition).not_to be_valid
-    @requisition.department = 'aaaaa'
+    @requisition.department = 'aaaa'
     expect(@requisition).to be_valid
   end
   it 'should validate preferred starting date present' do

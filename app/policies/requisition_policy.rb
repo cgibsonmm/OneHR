@@ -6,12 +6,18 @@ class RequisitionPolicy < ApplicationPolicy
     end
 
     def resolve
-      return @user if @user.admin? || @user.hiring_manager?
+      return @scope.all if @user.admin?
+      return @scope.where(user: @user) if @user.hiring_manager?
+      return @scope.where(user: @user) if @user
     end
 
     private
 
     attr_reader :user, :scope
+  end
+
+  def index?
+    return true if user
   end
 
   def new?

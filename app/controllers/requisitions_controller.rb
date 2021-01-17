@@ -3,7 +3,8 @@ class RequisitionsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @requisitions = current_user.requisitions
+    @requisitions = policy_scope(Requisition)
+    authorize @requisitions
   end
 
   def new
