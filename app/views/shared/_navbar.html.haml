@@ -17,12 +17,8 @@
             -# Drop Down Menu
             %div#dropdown.remove.hidden.absolute.z-1.w-full{'data-dropdown-target': 'links'}
               %ul.bg-gray-800.space-y-3
-                -# %li
-                -#   Profile
                 - if policy(Requisition).new?
-                  %li
+                  %li.pl-2.border-b.border-gray-500.w-full
                     = link_to 'New Requisition', new_requisition_path
-                -# %li
-                -#   Settings
-                %li
+                %li.pl-2.border-b.border-gray-900.w-full
                   = link_to 'Log Out', destroy_user_session_path, method: 'delete'
