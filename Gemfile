@@ -34,7 +34,6 @@ end
 
 group :test do
   gem 'database_cleaner-active_record'
-  gem 'faker'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem "shoulda-matchers", require: false
@@ -66,3 +65,4 @@ gem "haml-rails", "~> 2.0"
 gem "administrate"
 gem 'simple_form'
 gem 'pundit'
+gem 'faker'
