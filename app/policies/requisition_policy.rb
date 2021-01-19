@@ -29,6 +29,6 @@ class RequisitionPolicy < ApplicationPolicy
   end
 
   def show?
-    create?
+    true
   end
 end
