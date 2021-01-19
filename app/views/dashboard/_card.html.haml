@@ -1,13 +1,14 @@
-.dashboard-card.text-center{class: 'w-full md:w-1/2'}
-  .mx-3.lg:mx-4.my-3.lg:my-4.py-10.md:py-20.rounded-lg.bg-gray-400
+.dashboard-card.text-center.w-full{class: 'md:w-1/2'}
+  .mx-3.lg:mx-4.my-3.lg:my-4.py-10.md:py-20.rounded-lg.bg-white.shadow-xs
     %h4.text-lg.font-semibold.text-gray-900
-      = fa_icon card[:logo], size: '2x'
+      = fa_stacked_icon(card[:logo], base: 'circle', type: :fas, base_options: { class: "text-#{card[:color]}-300" }, icon_options: {class: "text-#{card[:color]}-700"})
       %br
-      - if card[:title] === "My Reqs"
-        = render partial: 'dashboard/cards/req', locals: { card: card, req: @requisitions }
-      - if card[:title] === 'Candidates'
-        = render partial: 'dashboard/cards/candiates', locals: { card: card }
-      - if card[:title] === 'Calendar'
-        = render partial: 'dashboard/cards/calendar', locals: { card: card }      
-      - if card[:title] === 'Reports'
-        = render partial: 'dashboard/cards/report', locals: { card: card }
+      %div{class: "text-#{card[:color]}-700"}
+        - if card[:title] === "My Reqs"
+          = render partial: 'dashboard/cards/req', locals: { card: card, req: @requisitions }
+        - if card[:title] === 'Candidates'
+          = render partial: 'dashboard/cards/candiates', locals: { card: card }
+        - if card[:title] === 'Calendar'
+          = render partial: 'dashboard/cards/calendar', locals: { card: card }      
+        - if card[:title] === 'Reports'
+          = render partial: 'dashboard/cards/report', locals: { card: card }
