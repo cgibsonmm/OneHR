@@ -1,9 +1,12 @@
 %tr.requisition-line{class: "requisition-#{requisition.id}"}
-  %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
-    .text-sm.leading-5.text-gray-900
-      = requisition[:title]
-    .text-sm.leading-5.text-gray-500
-      = requisition[:department]
+  %td.whitespace-no-wrap.border-b
+    = link_to requisition_path(requisition) do
+      .hover:bg-gray-300.height-full.width-full
+        .px-6.py-4
+          .inline-block.text-sm.leading-5.text-gray-900
+            = requisition[:title]
+          .text-sm.leading-5.text-gray-500
+            = requisition[:department]
   %td.px-6.py-4.whitespace-no-wrap.border-b.border-gray-200
     .text-sm.leading-5.text-gray-900
       = requisition[:preferred_start_date]
