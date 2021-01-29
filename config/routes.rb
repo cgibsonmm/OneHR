@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     root to: 'clients#index'
   end
   get 'dashboard/index'
-  devise_for :clients
+  devise_for :clients, path: '',
+                       path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'sign-up' }
+
   root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
