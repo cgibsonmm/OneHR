@@ -61,6 +61,7 @@ gem "devise", "~> 4.7"
 gem 'hotwire-rails'
 gem 'font_awesome5_rails'
 gem "haml-rails", "~> 2.0"
+gem "simple_calendar", "~> 2.4"
 
 gem "administrate"
 gem 'simple_form'
