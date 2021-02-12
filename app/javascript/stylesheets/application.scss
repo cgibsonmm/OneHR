@@ -44,7 +44,7 @@
   .wday-5 {}
   .wday-6 {@apply text-gray-100 bg-gray-400}
 
-  .today {}
+  .today {@apply bg-blue-400}
   .past {
     @apply bg-gray-200
   }
