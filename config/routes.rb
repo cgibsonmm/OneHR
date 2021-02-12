@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  devise_for :clients, path: '',
-              path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'sign-up' }
+  devise_for :clients,
+              path: 'clients',
+              controllers: {
+               sessions: 'cilents/sessions'
+             }
 end

@@ -5,7 +5,7 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile
-  after_save :create_empty_profile, if: :create
+  # after_save :create_empty_profile, if: :create
 
   private
 
