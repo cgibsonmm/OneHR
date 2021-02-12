@@ -31,5 +31,33 @@
   @apply w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none
 }
 
+.simple-calendar {
+  .day {
+    @apply h-20 text-sm border border-gray-300 font-semibold
+  }
+
+  .wday-0 {@apply text-gray-100 bg-gray-400}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {@apply text-gray-100 bg-gray-400}
+
+  .today {@apply bg-blue-400}
+  .past {
+    @apply bg-gray-200
+  }
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { @apply bg-gray-200}
+  .current-month {}
+
+  .has-events {}
+}
+
 
 @import "tailwindcss/utilities";
